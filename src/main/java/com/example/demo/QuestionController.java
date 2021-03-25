@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Random;
 
 @Controller
 public class QuestionController {
@@ -13,11 +14,18 @@ public class QuestionController {
     @Autowired
     QuestionService questionService;
 
+
     @GetMapping("/greeting")
     public String greeting(Model model) {
-        Question question = questionService.getQuestionById(1);
+//        Question question = questionService.getQuestionById(1);
+//        model.addAttribute("question", question);
+
+        List<Question> questions = questionService.getAllQuestions();
+
+        Question question = questions.get(0);
         model.addAttribute("question", question);
-        System.out.println(questionService.getAllQuestions());
+        questions.remove(0);
+
         return "greeting";
 }
 

@@ -8,19 +8,3 @@ INSERT INTO QUESTION VALUES(7, 'y', true, 'Priorytetem polityki kulturalnej pań
 INSERT INTO QUESTION VALUES(8, 'y', true, 'Priorytetem polityki kulturalnej państwa powinno być wzmacnianie tożsamości narodowej.');
 INSERT INTO QUESTION VALUES(9, 'y', true, 'Priorytetem polityki kulturalnej państwa powinno być wzmacnianie tożsamości narodowej.');
 INSERT INTO QUESTION VALUES(10, 'y', true, 'Priorytetem polityki kulturalnej państwa powinno być wzmacnianie tożsamości narodowej.');
-
-
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-<body>
-hiaa
-<p th:text="'Pytanie: ' + ${question.getQuestion()} + '!'" />
-</body>
-</html>
-
-
-

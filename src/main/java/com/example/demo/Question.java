@@ -23,18 +23,30 @@ public class Question {
         this.question = question;
     }
 
-    public boolean isEconomic() {
-        return isEconomic;
-    }
 
-    public void setEconomic(boolean economic) {
-        isEconomic = economic;
-    }
 
     @Id
     @GeneratedValue
     private int id;
     private String question;
-    private boolean isEconomic;
+    private char axle;
+
+    public char getAxle() {
+        return axle;
+    }
+
+    public void setAxle(char axle) {
+        this.axle = axle;
+    }
+
+    public boolean isHasPositiveImpact() {
+        return hasPositiveImpact;
+    }
+
+    public void setHasPositiveImpact(boolean hasPositiveImpact) {
+        this.hasPositiveImpact = hasPositiveImpact;
+    }
+
+    private boolean hasPositiveImpact;
 
 }
