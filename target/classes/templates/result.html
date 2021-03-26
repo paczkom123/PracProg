@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background-color: #a3ffbc;
+        }
+
+        p {
+            color: black;
+            size: 242px;
+        }
+    </style>
+    <script th:inline="javascript">
+
+var xValue = [[${result.getxValue()}]];// przedzial 0 - 100, gdzie 50 to środek układu
+var yValue = [[${result.getyValue()}]];
+var konserwatyzm, progresywizm, leseferyzm, komunizm;
+leseferyzm = xValue;
+komunizm = 100 - xValue;
+konserwatyzm = yValue;
+progresywizm = 100 - yValue
+window.onload = function() {
+
+
+var social = {
+	title: {
+		text: "Poglądy społeczne"
+	},
+	data: [{
+			type: "pie",
+			startAngle: 45,
+			showInLegend: "true",
+			legendText: "{label}",
+			indexLabel: "{label} ({y})",
+			yValueFormatString:"#,##0.#"%"",
+			dataPoints: [
+				{ label: "Progresywizm", y: progresywizm },
+				{ label: "Konserwatyzm", y: konserwatyzm },
+			]
+	}]
+};
+
+var economic = {
+	title: {
+		text: "Poglądy gospodarcze"
+	},
+	data: [{
+	        click: onClickEconomic,
+			type: "pie",
+			startAngle: 45,
+			showInLegend: "true",
+			legendText: "{label}",
+			indexLabel: "{label} ({y})",
+			yValueFormatString:"#,##0.#"%"",
+			dataPoints: [
+				{ label: "Komunizm", y: komunizm },
+				{ label: "Leseferyzm", y: leseferyzm },
+			]
+	}]
+};
+
+$("#chartContainer").CanvasJSChart(economic);
+$("#chartContainer2").CanvasJSChart(social);
+
+}
+
+
+function onClickEconomic() {
+if (komunizm>leseferyzm){
+alert("jestes komuch")
+}else{
+alert("kucu")
+}
+	}
+</script>
+
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: auto; background-color: #a3ffbc;"></div>
+<div id="chartContainer2" style="height: 370px; width: 100%; background-color: #a3ffbc;"></div>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</body>
+</html>

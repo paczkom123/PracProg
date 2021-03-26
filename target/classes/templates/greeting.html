@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>Quiz</title>
+    <meta name="description" content="Roughly 155 characters">
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+<style>
+        body {
+            background-color: #a3ffbc;
+        }
+
+        p {
+            color: black;
+            size: 242px;
+        }
+    </style>
+
+<script>
+</script>
+
+<br>
+<br>
+<br>
+
+
+<center>
+    <p>Pytanie</p>
+</center>
+
+<br>
+<br>
+<br>
+<div class="card" style="width: 75rem; margin: auto">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <div style="text-align: center">
+            <p class="card-text">
+            <p th:text="${question.getQuestion()}" /></p>
+
+            <button name=btn1 style="background-color: #ff5f57;" onclick="btn1Clicked()">Całkowicie się nie
+                zgadzam</button>
+            <button name=btn2 style="background-color: #fa9f9b" onclick="btn2Clicked()">Raczej się nie
+                zgadzam</button>
+            <button name=btn3 onclick="btn3Clicked()">Nie mam zdania</button>
+            <button name=btn4 style="background-color: #a0f772;" onclick="btn4Clicked()">Raczej się zgadzam</button>
+            <button name=btn5 style="background-color: #5afc03" onclick="btn5Clicked()">Całkowicie się
+                szgadzam</button>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</body>
+
+</html>
