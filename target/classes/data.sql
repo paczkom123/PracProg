@@ -1,10 +1,8 @@
-INSERT INTO QUESTION VALUES(1, 'y', true, 'Priorytetem polityki kulturalnej państwa powinno być wzmacnianie tożsamości narodowej.');
-INSERT INTO QUESTION VALUES(2, 'y', false, 'Aborcja powinna być legalna w szerszym katalogu przypadków niż obecnie.');
-INSERT INTO QUESTION VALUES(3, 'y', false, 'Należy ułatwić dostęp do broni palnej.');
-INSERT INTO QUESTION VALUES(4, 'x', false, 'Hodowla zwierząt na futra powinna pozostać dozwolona.');
-INSERT INTO QUESTION VALUES(5, 'x', false, 'Należy podwyższyć podatki dla najlepiej zarabiających osób.');
-INSERT INTO QUESTION VALUES(6, 'y', true, 'Pensja minimalna powinna zostać znacznie podwyższona.');
-INSERT INTO QUESTION VALUES(7, 'y', true, 'Priorytetem polityki kulturalnej państwa powinno być wzmacnianie tożsamości narodowej.');
-INSERT INTO QUESTION VALUES(8, 'y', true, 'Priorytetem polityki kulturalnej państwa powinno być wzmacnianie tożsamości narodowej.');
-INSERT INTO QUESTION VALUES(9, 'y', true, 'Priorytetem polityki kulturalnej państwa powinno być wzmacnianie tożsamości narodowej.');
-INSERT INTO QUESTION VALUES(10, 'y', true, 'Priorytetem polityki kulturalnej państwa powinno być wzmacnianie tożsamości narodowej.');
+INSERT INTO QUESTION VALUES(1, false, 'y', true, 'Priorytetem polityki kulturalnej pabstwa powinno byc wzmacnianie tozsamosci narodowej.');
+INSERT INTO QUESTION VALUES(2, false, 'y', false, 'Aborcja powinna byc legalna w szerszym katalogu przypadkow niz obecnie.');
+INSERT INTO QUESTION VALUES(3, false, 'y', false, 'Nalezy ulatwic dostep do broni palnej.');
+INSERT INTO QUESTION VALUES(4, false, 'x', false, 'Hodowla zwierzat na futra powinna pozostac dozwolona.');
+INSERT INTO QUESTION VALUES(5, false, 'x', false, 'Nalezy podwyzszyc podatki dla najlepiej zarabiajacych osob.');
+INSERT INTO QUESTION VALUES(6, false, 'y', true, 'Pensja minimalna powinna zostac znacznie podwyzszona.');
+
+INSERT INTO POLITICAL_PARTY VALUES(1, 'dupa', 'prawoisprawiedliwosc.', 100, 100);
