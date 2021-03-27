@@ -67,22 +67,17 @@ function btn1Clicked(hasPositiveImpact, axle) {
   if (axle==='x') {
     if (hasPositiveImpact) {
       xValue=xValue-10;
-      alert(xValue);
     }else {
       xValue=xValue+10;
-
-      alert(xValue);
     }
   }
   if (axle==='y') {
       if(hasPositiveImpact){
       yValue=yValue-10;
 
-      alert(yValue);
     }else {
       yValue=yValue+10;
 
-      alert(yValue);
     }
   }
 }
@@ -92,22 +87,18 @@ function btn2Clicked(hasPositiveImpact, axle) {
   if (axle==='x') {
     if (hasPositiveImpact) {
       xValue=xValue-5;
-      alert(xValue);
     }else {
       xValue=xValue+5;
 
-      alert(xValue);
     }
   }
   if (axle==='y') {
       if(hasPositiveImpact){
       yValue=yValue-5;
 
-      alert(yValue);
     }else {
       yValue=yValue+5;
 
-      alert(yValue);
     }
   }
 }
@@ -122,22 +113,18 @@ function btn4Clicked(hasPositiveImpact, axle) {
   if (axle==='x') {
     if (hasPositiveImpact) {
       xValue=xValue+5;
-      alert(xValue);
     }else {
       xValue=xValue-5;
 
-      alert(xValue);
     }
   }
   if (axle==='y') {
       if(hasPositiveImpact){
       yValue=yValue+5;
 
-      alert(yValue);
     }else {
       yValue=yValue-5;
 
-      alert(yValue);
     }
   }
 }
@@ -147,22 +134,18 @@ function btn5Clicked(hasPositiveImpact, axle) {
   if (axle==='x') {
     if (hasPositiveImpact) {
       xValue=xValue+10;
-      alert(xValue);
     }else {
       xValue=xValue-10;
 
-      alert(xValue);
     }
   }
   if (axle==='y') {
       if(hasPositiveImpact){
       yValue=yValue+10;
 
-      alert(yValue);
     }else {
       yValue=yValue-10;
 
-      alert(yValue);
     }
   }
 }
@@ -267,6 +250,11 @@ function btn5Clicked(hasPositiveImpact, axle) {
 </div>
 <br>
 <br>
+<a href="/result/" onclick="location.href=this.href+xValue+'/'+yValue;return false;">
+    SPRAWDZ WYNIK </a>
+onclick="location.href=this.href+'?xyz='+val;return false;">
+
+
 
 </body>
 
