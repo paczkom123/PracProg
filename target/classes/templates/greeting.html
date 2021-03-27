@@ -47,20 +47,22 @@
 
 var xValue = 50;
 var yValue = 50;
-
-
+<!--nie doszedlem do tego jak w thymeleaf zrobic to sensowniej dlatego uzylem maloeleganckiego rozwiazania-->
+<!--TODO-->
 var axle1 = [[${question1.getAxle()}]];
 var axle2 = [[${question2.getAxle()}]];
 var axle3 = [[${question3.getAxle()}]];
 var axle4 = [[${question4.getAxle()}]];
 var axle5 = [[${question5.getAxle()}]];
 var axle6 = [[${question6.getAxle()}]];
+var axle7 = [[${question7.getAxle()}]];
 var hasPositiveImpact1 = [[${question1.isHasPositiveImpact()}]];
 var hasPositiveImpact2 = [[${question2.isHasPositiveImpact()}]];
 var hasPositiveImpact3 = [[${question3.isHasPositiveImpact()}]];
 var hasPositiveImpact4 = [[${question4.isHasPositiveImpact()}]];
 var hasPositiveImpact5 = [[${question5.isHasPositiveImpact()}]];
 var hasPositiveImpact6 = [[${question6.isHasPositiveImpact()}]];
+var hasPositiveImpact7 = [[${question7.isHasPositiveImpact()}]];
 
 
 function btn1Clicked(hasPositiveImpact, axle) {
@@ -229,6 +231,8 @@ function btn5Clicked(hasPositiveImpact, axle) {
         </div>
     </div>
 </div>
+<br>
+<br>
 
 <div class="card" style="width: 75rem; margin: auto">
     <div class="card-body">
@@ -250,10 +254,68 @@ function btn5Clicked(hasPositiveImpact, axle) {
 </div>
 <br>
 <br>
+<div class="card" style="width: 75rem; margin: auto">
+    <div class="card-body">
+        <h5 class="card-title">Pytanie</h5>
+        <div style="text-align: center">
+            <p class="card-text">
+            <p th:text="${question5.getQuestion()}" /></p>
+
+            <button name=btn1 style="background-color: #ff5f57;" onclick="btn1Clicked(hasPositiveImpact5, axle5)">Całkowicie się nie
+                zgadzam</button>
+            <button name=btn2 style="background-color: #fa9f9b" onclick="btn2Clicked(hasPositiveImpact5, axle5)">Raczej się nie
+                zgadzam</button>
+            <button name=btn3 onclick="btn3Clicked()">Nie mam zdania</button>
+            <button name=btn4 style="background-color: #a0f772;" onclick="btn4Clicked(hasPositiveImpact5, axle5)">Raczej się zgadzam</button>
+            <button name=btn5 style="background-color: #5afc03" onclick="btn5Clicked(hasPositiveImpact5, axle5)">Całkowicie się
+                szgadzam</button>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="card" style="width: 75rem; margin: auto">
+    <div class="card-body">
+        <h5 class="card-title">Pytanie</h5>
+        <div style="text-align: center">
+            <p class="card-text">
+            <p th:text="${question6.getQuestion()}" /></p>
+
+            <button name=btn1 style="background-color: #ff5f57;" onclick="btn1Clicked(hasPositiveImpact6, axle6)">Całkowicie się nie
+                zgadzam</button>
+            <button name=btn2 style="background-color: #fa9f9b" onclick="btn2Clicked(hasPositiveImpact6, axle6)">Raczej się nie
+                zgadzam</button>
+            <button name=btn3 onclick="btn3Clicked()">Nie mam zdania</button>
+            <button name=btn4 style="background-color: #a0f772;" onclick="btn4Clicked(hasPositiveImpact6, axle6)">Raczej się zgadzam</button>
+            <button name=btn5 style="background-color: #5afc03" onclick="btn5Clicked(hasPositiveImpact6, axle6)">Całkowicie się
+                szgadzam</button>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="card" style="width: 75rem; margin: auto">
+    <div class="card-body">
+        <h5 class="card-title">Pytanie</h5>
+        <div style="text-align: center">
+            <p class="card-text">
+            <p th:text="${question7.getQuestion()}" /></p>
+
+            <button name=btn1 style="background-color: #ff5f57;" onclick="btn1Clicked(hasPositiveImpact7, axle7)">Całkowicie się nie
+                zgadzam</button>
+            <button name=btn2 style="background-color: #fa9f9b" onclick="btn2Clicked(hasPositiveImpact7, axle7)">Raczej się nie
+                zgadzam</button>
+            <button name=btn3 onclick="btn3Clicked()">Nie mam zdania</button>
+            <button name=btn4 style="background-color: #a0f772;" onclick="btn4Clicked(hasPositiveImpact7, axle7)">Raczej się zgadzam</button>
+            <button name=btn5 style="background-color: #5afc03" onclick="btn5Clicked(hasPositiveImpact7, axle7)">Całkowicie się
+                szgadzam</button>
+        </div>
+    </div>
+</div>
+<br>
+<br>
 <a href="/result/" onclick="location.href=this.href+xValue+'/'+yValue;return false;">
     SPRAWDZ WYNIK </a>
-onclick="location.href=this.href+'?xyz='+val;return false;">
-
 
 
 </body>

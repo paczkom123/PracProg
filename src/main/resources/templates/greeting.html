@@ -8,9 +8,8 @@
     <meta charset="utf-8">
     <title>Quiz</title>
     <meta name="description" content="Roughly 155 characters">
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+
 </head>
 
 <body>
@@ -34,55 +33,290 @@
 
 
 <center>
-    <p>Pytanie</p>
+    <p>Kompas polityczny</p>
 </center>
 
+
+<br>
+
 <br>
 <br>
 <br>
+<script th:inline="javascript">
+
+
+var xValue = 50;
+var yValue = 50;
+<!--nie doszedlem do tego jak w thymeleaf zrobic to sensowniej dlatego uzylem maloeleganckiego rozwiazania-->
+<!--TODO-->
+var axle1 = [[${question1.getAxle()}]];
+var axle2 = [[${question2.getAxle()}]];
+var axle3 = [[${question3.getAxle()}]];
+var axle4 = [[${question4.getAxle()}]];
+var axle5 = [[${question5.getAxle()}]];
+var axle6 = [[${question6.getAxle()}]];
+var axle7 = [[${question7.getAxle()}]];
+var hasPositiveImpact1 = [[${question1.isHasPositiveImpact()}]];
+var hasPositiveImpact2 = [[${question2.isHasPositiveImpact()}]];
+var hasPositiveImpact3 = [[${question3.isHasPositiveImpact()}]];
+var hasPositiveImpact4 = [[${question4.isHasPositiveImpact()}]];
+var hasPositiveImpact5 = [[${question5.isHasPositiveImpact()}]];
+var hasPositiveImpact6 = [[${question6.isHasPositiveImpact()}]];
+var hasPositiveImpact7 = [[${question7.isHasPositiveImpact()}]];
+
+
+function btn1Clicked(hasPositiveImpact, axle) {
+  if (axle==='x') {
+    if (hasPositiveImpact) {
+      xValue=xValue-10;
+    }else {
+      xValue=xValue+10;
+    }
+  }
+  if (axle==='y') {
+      if(hasPositiveImpact){
+      yValue=yValue-10;
+
+    }else {
+      yValue=yValue+10;
+
+    }
+  }
+}
+
+
+function btn2Clicked(hasPositiveImpact, axle) {
+  if (axle==='x') {
+    if (hasPositiveImpact) {
+      xValue=xValue-5;
+    }else {
+      xValue=xValue+5;
+
+    }
+  }
+  if (axle==='y') {
+      if(hasPositiveImpact){
+      yValue=yValue-5;
+
+    }else {
+      yValue=yValue+5;
+
+    }
+  }
+}
+
+
+function btn3Clicked() {
+
+}
+
+
+function btn4Clicked(hasPositiveImpact, axle) {
+  if (axle==='x') {
+    if (hasPositiveImpact) {
+      xValue=xValue+5;
+    }else {
+      xValue=xValue-5;
+
+    }
+  }
+  if (axle==='y') {
+      if(hasPositiveImpact){
+      yValue=yValue+5;
+
+    }else {
+      yValue=yValue-5;
+
+    }
+  }
+}
+
+
+function btn5Clicked(hasPositiveImpact, axle) {
+  if (axle==='x') {
+    if (hasPositiveImpact) {
+      xValue=xValue+10;
+    }else {
+      xValue=xValue-10;
+
+    }
+  }
+  if (axle==='y') {
+      if(hasPositiveImpact){
+      yValue=yValue+10;
+
+    }else {
+      yValue=yValue-10;
+
+    }
+  }
+}
+
+
+</script>
+<br>
+<br>
+<br>
+<br>
+<!--<br>-->
+<!--<div th:each="question, stats : ${questions}">-->
+
+<!--        <div th:text="${stats.index + 1}">1</div>-->
+<!--        <div th:text="${question.getQuestion}">John</div>-->
+<!--</div>-->
+</div>
+</div>
+<br>
+<br>
+
 <div class="card" style="width: 75rem; margin: auto">
     <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Pytanie</h5>
         <div style="text-align: center">
             <p class="card-text">
-            <p th:text="${question.getQuestion()}" /></p>
+            <p th:text="${question1.getQuestion()}" /></p>
 
-            <button name=btn1 style="background-color: #ff5f57;" onclick="btn1Clicked()">Całkowicie się nie
+            <button name=btn1 style="background-color: #ff5f57;" onclick="btn1Clicked(hasPositiveImpact1, axle1)">Całkowicie się nie
                 zgadzam</button>
-            <button name=btn2 style="background-color: #fa9f9b" onclick="btn2Clicked()">Raczej się nie
+            <button name=btn2 style="background-color: #fa9f9b" onclick="btn2Clicked(hasPositiveImpact1, axle1)">Raczej się nie
                 zgadzam</button>
             <button name=btn3 onclick="btn3Clicked()">Nie mam zdania</button>
-            <button name=btn4 style="background-color: #a0f772;" onclick="btn4Clicked()">Raczej się zgadzam</button>
-            <button name=btn5 style="background-color: #5afc03" onclick="btn5Clicked()">Całkowicie się
+            <button name=btn4 style="background-color: #a0f772;" onclick="btn4Clicked(hasPositiveImpact1, axle1)">Raczej się zgadzam</button>
+            <button name=btn5 style="background-color: #5afc03" onclick="btn5Clicked(hasPositiveImpact1, axle1)">Całkowicie się
+                szgadzam</button>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class="card" style="width: 75rem; margin: auto">
+    <div class="card-body">
+        <h5 class="card-title">Pytanie</h5>
+        <div style="text-align: center">
+            <p class="card-text">
+            <p th:text="${question2.getQuestion()}" /></p>
+
+            <button name=btn1 style="background-color: #ff5f57;" onclick="btn1Clicked(hasPositiveImpact2, axle2)">Całkowicie się nie
+                zgadzam</button>
+            <button name=btn2 style="background-color: #fa9f9b" onclick="btn2Clicked(hasPositiveImpact2, axle2)">Raczej się nie
+                zgadzam</button>
+            <button name=btn3 onclick="btn3Clicked()">Nie mam zdania</button>
+            <button name=btn4 style="background-color: #a0f772;" onclick="btn4Clicked(hasPositiveImpact2, axle2)">Raczej się zgadzam</button>
+            <button name=btn5 style="background-color: #5afc03" onclick="btn5Clicked(hasPositiveImpact2, axle2)">Całkowicie się
+                szgadzam</button>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class="card" style="width: 75rem; margin: auto">
+    <div class="card-body">
+        <h5 class="card-title">Pytanie</h5>
+        <div style="text-align: center">
+            <p class="card-text">
+            <p th:text="${question3.getQuestion()}" /></p>
+
+            <button name=btn1 style="background-color: #ff5f57;" onclick="btn1Clicked(hasPositiveImpact3, axle3)">Całkowicie się nie
+                zgadzam</button>
+            <button name=btn2 style="background-color: #fa9f9b" onclick="btn2Clicked(hasPositiveImpact3, axle3)">Raczej się nie
+                zgadzam</button>
+            <button name=btn3 onclick="btn3Clicked()">Nie mam zdania</button>
+            <button name=btn4 style="background-color: #a0f772;" onclick="btn4Clicked(hasPositiveImpact3, axle3)">Raczej się zgadzam</button>
+            <button name=btn5 style="background-color: #5afc03" onclick="btn5Clicked(hasPositiveImpact3, axle3)">Całkowicie się
                 szgadzam</button>
         </div>
     </div>
 </div>
 <br>
 <br>
-<br>
 
-<br>
-<br>
-<br>
+<div class="card" style="width: 75rem; margin: auto">
+    <div class="card-body">
+        <h5 class="card-title">Pytanie</h5>
+        <div style="text-align: center">
+            <p class="card-text">
+            <p th:text="${question4.getQuestion()}" /></p>
 
+            <button name=btn1 style="background-color: #ff5f57;" onclick="btn1Clicked(hasPositiveImpact4, axle4)">Całkowicie się nie
+                zgadzam</button>
+            <button name=btn2 style="background-color: #fa9f9b" onclick="btn2Clicked(hasPositiveImpact4, axle4)">Raczej się nie
+                zgadzam</button>
+            <button name=btn3 onclick="btn3Clicked()">Nie mam zdania</button>
+            <button name=btn4 style="background-color: #a0f772;" onclick="btn4Clicked(hasPositiveImpact4, axle4)">Raczej się zgadzam</button>
+            <button name=btn5 style="background-color: #5afc03" onclick="btn5Clicked(hasPositiveImpact4, axle4)">Całkowicie się
+                szgadzam</button>
+        </div>
+    </div>
+</div>
 <br>
 <br>
-<br>
+<div class="card" style="width: 75rem; margin: auto">
+    <div class="card-body">
+        <h5 class="card-title">Pytanie</h5>
+        <div style="text-align: center">
+            <p class="card-text">
+            <p th:text="${question5.getQuestion()}" /></p>
 
+            <button name=btn1 style="background-color: #ff5f57;" onclick="btn1Clicked(hasPositiveImpact5, axle5)">Całkowicie się nie
+                zgadzam</button>
+            <button name=btn2 style="background-color: #fa9f9b" onclick="btn2Clicked(hasPositiveImpact5, axle5)">Raczej się nie
+                zgadzam</button>
+            <button name=btn3 onclick="btn3Clicked()">Nie mam zdania</button>
+            <button name=btn4 style="background-color: #a0f772;" onclick="btn4Clicked(hasPositiveImpact5, axle5)">Raczej się zgadzam</button>
+            <button name=btn5 style="background-color: #5afc03" onclick="btn5Clicked(hasPositiveImpact5, axle5)">Całkowicie się
+                szgadzam</button>
+        </div>
+    </div>
+</div>
 <br>
 <br>
-<br>
+<div class="card" style="width: 75rem; margin: auto">
+    <div class="card-body">
+        <h5 class="card-title">Pytanie</h5>
+        <div style="text-align: center">
+            <p class="card-text">
+            <p th:text="${question6.getQuestion()}" /></p>
 
+            <button name=btn1 style="background-color: #ff5f57;" onclick="btn1Clicked(hasPositiveImpact6, axle6)">Całkowicie się nie
+                zgadzam</button>
+            <button name=btn2 style="background-color: #fa9f9b" onclick="btn2Clicked(hasPositiveImpact6, axle6)">Raczej się nie
+                zgadzam</button>
+            <button name=btn3 onclick="btn3Clicked()">Nie mam zdania</button>
+            <button name=btn4 style="background-color: #a0f772;" onclick="btn4Clicked(hasPositiveImpact6, axle6)">Raczej się zgadzam</button>
+            <button name=btn5 style="background-color: #5afc03" onclick="btn5Clicked(hasPositiveImpact6, axle6)">Całkowicie się
+                szgadzam</button>
+        </div>
+    </div>
+</div>
 <br>
 <br>
+<div class="card" style="width: 75rem; margin: auto">
+    <div class="card-body">
+        <h5 class="card-title">Pytanie</h5>
+        <div style="text-align: center">
+            <p class="card-text">
+            <p th:text="${question7.getQuestion()}" /></p>
+
+            <button name=btn1 style="background-color: #ff5f57;" onclick="btn1Clicked(hasPositiveImpact7, axle7)">Całkowicie się nie
+                zgadzam</button>
+            <button name=btn2 style="background-color: #fa9f9b" onclick="btn2Clicked(hasPositiveImpact7, axle7)">Raczej się nie
+                zgadzam</button>
+            <button name=btn3 onclick="btn3Clicked()">Nie mam zdania</button>
+            <button name=btn4 style="background-color: #a0f772;" onclick="btn4Clicked(hasPositiveImpact7, axle7)">Raczej się zgadzam</button>
+            <button name=btn5 style="background-color: #5afc03" onclick="btn5Clicked(hasPositiveImpact7, axle7)">Całkowicie się
+                szgadzam</button>
+        </div>
+    </div>
+</div>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<a href="/result/" onclick="location.href=this.href+xValue+'/'+yValue;return false;">
+    SPRAWDZ WYNIK </a>
+
 
 </body>
 

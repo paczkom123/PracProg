@@ -7,6 +7,7 @@ import javax.persistence.Id;
 @Entity
 public class Question {
 
+
     public int getId() {
         return id;
     }
@@ -31,6 +32,13 @@ public class Question {
     private String question;
     private char axle;
 
+    public void setAnswered(boolean answered) {
+        this.answered = answered;
+    }
+
+    private boolean answered;
+
+
     public char getAxle() {
         return axle;
     }
@@ -41,6 +49,11 @@ public class Question {
 
     public boolean isHasPositiveImpact() {
         return hasPositiveImpact;
+    }
+
+
+    public boolean isAnswered() {
+        return answered;
     }
 
     public void setHasPositiveImpact(boolean hasPositiveImpact) {
